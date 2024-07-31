@@ -1,4 +1,5 @@
 import socket
+import threading
 
 IP_ESP32 = '192.168.1.5'
 PORT_ESP32 = 80
@@ -52,10 +53,17 @@ def receive_csv():
     print("CSV file received and saved as 'received_messages_from_server.csv'.")
 
 def main():
+    esp32_thread = None
+
     while True:
         user_input = input("Enter command (start, get_csv, disconnect): ").strip().lower()
         if user_input == "start":
-            receive_from_esp32()
+            if esp32_thread is None or not esp32_thread.is_alive():
+                esp32_thread = threading.Thread(target=receive_from_esp32)
+                esp32_thread.start()
+                print("[INFO] ESP32 thread started.")
+            else:
+                print("[INFO] ESP32 thread is already running.")
         elif user_input == "get_csv":
             request_csv()
         elif user_input == "disconnect":
