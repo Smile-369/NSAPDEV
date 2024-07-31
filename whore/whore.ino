@@ -5,8 +5,8 @@
 
 boolean flag = true;
 
-const char* ssid = "Bitch";
-const char* password = "12345578";
+const char* ssid = "PLDTHOMEFIBR26212";
+const char* password = "PLDTWIFI12OKE";
 
 WiFiServer wifiServer(80);
 

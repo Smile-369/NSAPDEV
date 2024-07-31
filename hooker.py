@@ -1,10 +1,10 @@
 import socket
 
-IP_ESP32 = '192.168.237.105'
+IP_ESP32 = '192.168.1.5'
 PORT_ESP32 = 80
 
-IP_SERVER = socket.gethostbyname(socket.gethostname())
-PORT_SERVER = 5566
+IP_SERVER = "ccscloud.dlsu.edu.ph"
+PORT_SERVER = 20257
 
 SIZE = 1024
 FORMAT = "utf-8"
