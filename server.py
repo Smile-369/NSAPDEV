@@ -4,8 +4,8 @@ from datetime import datetime
 import csv
 import os
 
-IP = "10.2.201.200"
-PORT = 8000
+IP = "192.168.1.4"
+PORT = 20257
 ADDR = (IP, PORT)
 SIZE = 1024
 FORMAT = "utf-8"

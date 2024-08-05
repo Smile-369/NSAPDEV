@@ -2,6 +2,7 @@ import socket
 import threading
 import time
 import pandas as pd
+import random
 import matplotlib.pyplot as plt
 
 IP_SERVER = "ccscloud.dlsu.edu.ph"
@@ -33,7 +34,7 @@ def esp32_emulator(client_id):
     while True:
         message = "Motion detected!"
         esp_client.send(message.encode(FORMAT))
-        time.sleep(1)
+        time.sleep(random.randint(1, 5))
 
 def start_emulators():
     threads = []
